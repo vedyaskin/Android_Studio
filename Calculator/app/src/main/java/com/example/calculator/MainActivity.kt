@@ -4,8 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -16,7 +14,6 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.text.isDigitsOnly
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.appcompat.widget.Toolbar
@@ -118,31 +115,32 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     fun stringToSeconds(string: String): Int {
         val str = string.replace(" ", "").lowercase()
         var sec = 0
-        var hourOrMinEntered = false
+        var timeEntered = false
         try {
             if (str.contains("h")) {
                 sec += str.substringBefore("h").toInt() * (60 * 60)
-                hourOrMinEntered = true
+                timeEntered = true
             }
             if (str.contains("m")) {
                 val temp = str.substring(str.indexOf("h") + 1, str.indexOf("m")).toInt()
-                if (hourOrMinEntered && temp > 60) {
+                if (timeEntered && temp > 60) {
                     showAlertDialog(this, "Введено $temp мин. В часе не может быть столько.")
                 } else {
                     sec += temp * (60)
-                    hourOrMinEntered = true
+                    timeEntered = true
                 }
             }
             if (str.contains("s")) {
                 val temp = str.substring(str.indexOf("m") + 1, str.indexOf("s")).toInt()
 
-                if (hourOrMinEntered && temp > 60) {
+                if (timeEntered && temp > 60) {
                     showAlertDialog(this, "Введено $temp сек. В минуте не может быть столько.")
                 } else {
                     sec += str.substring(str.indexOf("m") + 1, str.indexOf("s")).toInt()
+                    timeEntered = true
                 }
             }
-            if (!hourOrMinEntered) {
+            if (!timeEntered) {
                 showAlertDialog(this, "$str")
             }
             return sec
