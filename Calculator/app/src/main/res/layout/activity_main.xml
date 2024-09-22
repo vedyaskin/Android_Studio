@@ -7,17 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/titelTextTV"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBarMain"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
+        android:background="@color/dark_green"
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:id="@+id/linearLayoutInputTime"
@@ -29,7 +24,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titelTextTV"
+        app:layout_constraintTop_toBottomOf="@+id/toolBarMain"
         app:layout_constraintVertical_bias="0.2">
 
         <EditText
@@ -80,6 +75,7 @@
             android:textSize="25sp"
             android:layout_marginEnd="4pt"
             android:gravity="center"
+            android:backgroundTint="@color/green"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/DifBTN"
             app:layout_constraintBottom_toBottomOf = "parent"/>
@@ -92,6 +88,7 @@
             android:gravity="center"
             android:layout_weight="1"
             android:layout_marginStart="4pt"
+            android:backgroundTint="@color/green"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -102,6 +99,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="@string/result"
+        android:textColor="@color/red"
         android:textSize="25sp"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/linearLayoutChoiceOperator"
