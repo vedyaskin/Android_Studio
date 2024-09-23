@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HW_ContextMenu</string>
+    <string name="grade">Поставте оценку</string>
+    <string name="color_quality">Цветовое качество</string>
+    <string name="exit">Выход из приложения</string>
+    <string name="exeption">Введите оценку от 1 до 5</string>
+    <string name="generation">Сгенерировать оценку</string>
+</resources>
