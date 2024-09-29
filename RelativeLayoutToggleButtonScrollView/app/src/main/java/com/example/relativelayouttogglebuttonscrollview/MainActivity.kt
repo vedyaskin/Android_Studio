@@ -38,16 +38,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(p0: View?) {
         when (p0?.id){
             R.id.buttonBTN -> {
-                val text = Database().text.split(" ")
-                for(i in text){
+                for(i in loadBook(Database().story)){
                     textTV.append(i + "\n")
                 }
             }
         }
     }
 }
+fun loadBook(text: String): List<String>{
+    return text.split(" ").toList()
+}
 class Database{
-    val text = "\"Три закона\". Автор - Савва Казюлин. " +
+    val story = "\"Три закона\". Автор - Савва Казюлин. " +
             "Если вы будете помнить эти три правила, то наше общество будет процветать! " +
             "1. Идеал людей - постоянное совершенствование, поэтому любое общество, в котором есть люди, обречено на мутацию и разрушение. " +
             "2. Некоторые из людей владеют навыками программирования. " +
