@@ -10,10 +10,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
-    lateinit var textView: TextView
-    lateinit var checkBox: CheckBox
-    lateinit var bigTextView: TextView
-    lateinit var toolbar: Toolbar
+    private lateinit var textView: TextView
+    private lateinit var checkBox: CheckBox
+    private lateinit var bigTextView: TextView
+    private lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +42,5 @@ class MainActivity : AppCompatActivity() {
                 bigTextView.text = ""
             }
         }
-
-
     }
 }
