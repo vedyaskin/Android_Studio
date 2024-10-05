@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -12,10 +11,13 @@
     <TextView
         android:id="@+id/textViewTV"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:hint="@string/textOut"
         android:textAlignment="center"
-        android:textSize="18sp"
+        android:textSize="24sp"
+        android:textColorHint="#919fb4"
+        android:layout_marginLeft="3pt"
+        android:layout_marginRight="3pt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -26,10 +28,16 @@
     <EditText
         android:id="@+id/input_DataET"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:background="@android:color/white"
         android:hint="@string/inputField"
+        android:textSize="24sp"
         android:inputType="text"
         android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textColorHint="#919fb4"
+        android:layout_marginLeft="3pt"
+        android:layout_marginRight="3pt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.447"
@@ -41,31 +49,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/input_DataET"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_DataET"
         app:layout_constraintVertical_bias="0.5">
 
         <Button
             android:id="@+id/saveBTN"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/save_data"
-            android:padding="0dp"
             android:layout_marginLeft="3pt"
-            android:layout_marginRight="3pt"/>
+            android:layout_marginRight="3pt"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:text="@string/save_data"
+            android:textSize="18sp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:maxWidth="320dp"/>
 
         <Button
             android:id="@+id/delBTN"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/delete_data"
-            android:padding="0dp"
             android:layout_marginLeft="3pt"
-            android:layout_marginRight="3pt"/>
+            android:layout_marginRight="3pt"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:text="@string/delete_data"
+            android:textSize="18sp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:maxWidth="320dp"/>
 
     </LinearLayout>
 
