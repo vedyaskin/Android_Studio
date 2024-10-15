@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when (p0?.id){
             R.id.buttonBTN -> {
                 for(i in loadBook(Database().story)){
-                    textTV.append(i + "\n")
+                    textTV.append(i + " ")
                 }
             }
         }
