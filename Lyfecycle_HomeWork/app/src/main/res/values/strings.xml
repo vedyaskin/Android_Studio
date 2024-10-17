@@ -7,7 +7,7 @@
     <string name="calculate">Рассчитать</string>
     <string name="title">Индекс массы тела</string>
     <string name="image_bmi">image_bmi</string>
-    <string name="bmi">ИМТ\n</string>
+    <string name="bmi">ИМТ:\ </string>
     <string name="slim"> Низкий вес (ИМТ &lt; 18,5)\n
         Рекомендации: \n
         Людям с низким весом важно обратить внимание на сбалансированное питание с увеличением

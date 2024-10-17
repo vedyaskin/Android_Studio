@@ -1,13 +1,17 @@
 package com.example.lyfecycle_homework
 
 import android.util.Log
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.DefaultLifecycleObserver
 
-class MyObserver : LifecycleObserver {
-    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun onCreate() {
+import androidx.lifecycle.LifecycleOwner
+
+
+class MyObserver : DefaultLifecycleObserver {
+    override fun onCreate(owner: LifecycleOwner) {
         Log.d("TAG", "onCreate")
+    }
+
+    override fun onStart(owner: LifecycleOwner) {
+
     }
 }

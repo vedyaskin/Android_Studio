@@ -17,8 +17,11 @@ class SecondActivity2 : AppCompatActivity() {
     private lateinit var scrollView: ScrollView
     private lateinit var largeTextView: TextView
 
+    
+    var bmi = 0.0
     // @SuppressLint("SetTextI18n", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_second2)
@@ -31,15 +34,16 @@ class SecondActivity2 : AppCompatActivity() {
         imageView = findViewById(R.id.imageView)
         scrollView = findViewById(R.id.scrollView)
         largeTextView = findViewById(R.id.largeTextView)
+
         myObserver = MyObserver()
         lifecycle.addObserver(myObserver)
 
         val weight = intent.getStringExtra("weight")?.toDouble()
         val height = intent.getStringExtra("height")?.toDouble()
-        var bmi = 0.0
+
         if (weight != null && height != null) {
             bmi = weight / (height * height)
-            bmi = round(bmi * 10) / 10
+            bmi = round(bmi * 100) / 100
             textView.text = getString(R.string.bmi) + bmi.toString()
         }
         if (bmi < 18.5) {
@@ -52,9 +56,16 @@ class SecondActivity2 : AppCompatActivity() {
         } else if (bmi >= 25.0 && bmi < 30) {
             imageView.setImageResource(R.drawable.fat)
             largeTextView.text = getString(R.string.fat)
-        } else {
+        } else if (bmi >= 30) {
             imageView.setImageResource(R.drawable.very_fat)
             largeTextView.text = getString(R.string.very_fat)
         }
+    }
+    override fun onStart() {
+        super.onStart()
+
+    }
+    fun calculateBMI(weight: Double, height: Double): Double {
+        return weight / (height * height)
     }
 }
