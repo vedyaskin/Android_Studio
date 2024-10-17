@@ -2,5 +2,4 @@
 ![image2](images/img2.png)
 ![image3](images/img3.png)
 ![image4](images/img4.png)
-![image5](images/img5.png)
 ![image6](images/img6.png)
