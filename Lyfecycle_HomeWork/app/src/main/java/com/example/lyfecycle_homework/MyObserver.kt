@@ -11,7 +11,4 @@ class MyObserver : DefaultLifecycleObserver {
         Log.d("TAG", "onCreate")
     }
 
-    override fun onStart(owner: LifecycleOwner) {
-
-    }
 }

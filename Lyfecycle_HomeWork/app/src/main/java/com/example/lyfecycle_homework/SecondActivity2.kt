@@ -17,9 +17,8 @@ class SecondActivity2 : AppCompatActivity() {
     private lateinit var scrollView: ScrollView
     private lateinit var largeTextView: TextView
 
-    
     var bmi = 0.0
-    // @SuppressLint("SetTextI18n", "MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -61,11 +60,5 @@ class SecondActivity2 : AppCompatActivity() {
             largeTextView.text = getString(R.string.very_fat)
         }
     }
-    override fun onStart() {
-        super.onStart()
 
-    }
-    fun calculateBMI(weight: Double, height: Double): Double {
-        return weight / (height * height)
-    }
 }
