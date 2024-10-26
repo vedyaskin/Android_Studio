@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBarMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_green"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutInputTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight = "8pt"
+        android:layout_marginLeft="8pt"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBarMain"
+        app:layout_constraintVertical_bias="0.2">
+
+        <EditText
+            android:id="@+id/timeFirstET"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="@string/time"
+            android:gravity="center"
+            android:layout_marginEnd="4pt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/timeSecondET"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="@string/time"
+            android:gravity="center"
+            android:layout_marginStart="4pt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutChoiceOperator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="8pt"
+        android:layout_marginRight="8pt"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutInputTime"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.2">
+
+        <Button
+            android:id="@+id/SumBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/mult"
+            android:textSize="25sp"
+            android:layout_marginEnd="4pt"
+            android:gravity="center"
+            android:backgroundTint="@color/green"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/DifBTN"
+            app:layout_constraintBottom_toBottomOf = "parent"/>
+        <Button
+            android:id="@+id/DifBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dif"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_marginStart="4pt"
+            android:backgroundTint="@color/green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/resultTV"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="@string/result"
+        android:textColor="@color/red"
+        android:textSize="25sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutChoiceOperator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8pt"
+        app:layout_constraintVertical_bias="0.2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

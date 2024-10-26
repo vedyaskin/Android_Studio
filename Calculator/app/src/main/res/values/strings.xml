@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="time_calc">Калькулятор времени</string>
+    <string name="mult">+</string>
+    <string name="dif">-</string>
+    <string name="time">Введите время</string>
+    <string name="result">Результат</string>
+    <string name="reset">Reset</string>
+    <string name="exit">Exit</string>
+</resources>
