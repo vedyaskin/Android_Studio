@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">intent_lect</string>
+    <string name="calculator">Калькулятор.</string>
+    <string name="result">Результат.</string>
+    <string name="transfer">Передать данные</string>
+    <string name="enter_number">Введите число</string>
+</resources>

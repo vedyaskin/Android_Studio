@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity"
+    tools:ignore="MissingConstraints">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutInputOperand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8pt"
+        android:layout_marginRight="8pt"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/firstOperandET"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:hint="@string/enter_number"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/secondOperandET"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:hint="@string/enter_number"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:inputType="number"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutChoiceOperator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8pt"
+        android:layout_marginRight="8pt"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutInputOperand"
+        app:layout_constraintVertical_bias="0.1">
+
+        <Button
+            android:id="@+id/buttonSumBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/buttonDifBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="-"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/buttonMultBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="*"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/buttonDivBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="/"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/resultTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="center_horizontal"
+        android:hint="@string/result"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutChoiceOperator"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <Button
+        android:id="@+id/buttonTransferBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/transfer"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/resultTV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.3"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
