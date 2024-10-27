@@ -30,7 +30,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:padding="10sp"
         android:justificationMode="inter_word"
-        tools:targetApi="26"
-        tools:ignore="ObsoleteSdkInt" />
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
