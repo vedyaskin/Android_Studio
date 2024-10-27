@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         listView = findViewById(R.id.listView)
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, nameList)
         listView.adapter = adapter
 

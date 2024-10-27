@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2">
+    tools:context=".MainActivity2"
+    android:maxWidth="700dp">
 
     <TextView
         android:id="@+id/textView"
@@ -18,7 +19,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"/>
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -51,5 +53,17 @@
             android:text="@string/ans3Q1"
             android:textSize="18sp"/>
     </RadioGroup>
+    <Button
+        android:id="@+id/nextBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/next"
+        android:textSize="18sp"
+        app:layout_constraintVertical_bias="0.2"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

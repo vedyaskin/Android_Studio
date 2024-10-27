@@ -3,6 +3,7 @@ package com.example.radiobutton_hw
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
@@ -16,7 +17,8 @@ class MainActivity3 : AppCompatActivity() {
     private lateinit var scoreTV: TextView
     private lateinit var radioGroup3: RadioGroup
     private lateinit var wowRB: RadioButton
-
+    private lateinit var nextBTN: Button
+    private lateinit var rightAnswer: String
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,22 +30,27 @@ class MainActivity3 : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
         radioGroup3 = findViewById(R.id.radioGroup3)
         scoreTV = findViewById(R.id.scoreTV)
         wowRB = findViewById(R.id.wowRB)
-        var score = intent.getIntExtra("SCORE", 0)
+        nextBTN = findViewById(R.id.nextBTN)
 
+        var score = intent.getIntExtra("SCORE", 0)
         scoreTV.text = getString(R.string.score, score)
+        rightAnswer = getString(R.string.ans2Q2)
 
         val intent = Intent(this, MainActivity4::class.java)
 
-
-        radioGroup3.setOnCheckedChangeListener { group, checkId ->
-            val radio: RadioButton = findViewById(checkId)
-            if ( radio == wowRB){
-                score += 100
+        radioGroup3.setOnCheckedChangeListener { _, checkedID ->
+            if (checkedID != -1) {
+                val selectedRadioButton = findViewById<RadioButton>(checkedID)
+                val selectedOption = selectedRadioButton.text.toString()
+                if (selectedOption == rightAnswer) {
+                    score += 100
+                }
             }
+        }
+        nextBTN.setOnClickListener {
             intent.putExtra("SCORE", score)
             startActivity(intent)
             finish()

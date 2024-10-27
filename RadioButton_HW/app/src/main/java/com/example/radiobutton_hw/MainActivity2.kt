@@ -2,6 +2,7 @@ package com.example.radiobutton_hw
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.activity.enableEdgeToEdge
@@ -13,7 +14,10 @@ class MainActivity2 : AppCompatActivity() {
 
     private lateinit var radioGroup: RadioGroup
     private lateinit var groznyRB: RadioButton
+    private lateinit var nextBTN: Button
+    private lateinit var rightAnswer: String
     private var score = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,16 +29,27 @@ class MainActivity2 : AppCompatActivity() {
         }
         radioGroup = findViewById(R.id.radioGroup)
         groznyRB = findViewById(R.id.groznyRB)
+        nextBTN = findViewById(R.id.nextBTN)
+        rightAnswer = getString(R.string.ans1Q1)
+
         val intent = Intent(this, MainActivity3::class.java)
 
-        radioGroup.setOnCheckedChangeListener { group, checkedID ->
-            val radio: RadioButton = findViewById(checkedID)
-            if (radio == groznyRB) {
-                score += 100
+        radioGroup.setOnCheckedChangeListener { _, checkedID ->
+
+            if (checkedID != -1) {
+                val selectedRadioButton = findViewById<RadioButton>(checkedID)
+                val selectedOption = selectedRadioButton.text.toString()
+
+                if (selectedOption == rightAnswer) {
+                    score += 100
+                }
             }
+        }
+        nextBTN.setOnClickListener {
             intent.putExtra("SCORE", score)
             startActivity(intent)
             finish()
         }
+
     }
 }
