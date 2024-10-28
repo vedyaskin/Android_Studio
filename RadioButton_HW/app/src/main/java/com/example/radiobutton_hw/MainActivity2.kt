@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,6 +18,7 @@ class MainActivity2 : AppCompatActivity() {
     private lateinit var nextBTN: Button
     private lateinit var rightAnswer: String
     private var score = 0
+    private var selectedRadioButton: RadioButton? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,21 +37,26 @@ class MainActivity2 : AppCompatActivity() {
         val intent = Intent(this, MainActivity3::class.java)
 
         radioGroup.setOnCheckedChangeListener { _, checkedID ->
-
             if (checkedID != -1) {
-                val selectedRadioButton = findViewById<RadioButton>(checkedID)
-                val selectedOption = selectedRadioButton.text.toString()
-
+                selectedRadioButton = findViewById(checkedID)
+                val selectedOption = selectedRadioButton?.text.toString()
                 if (selectedOption == rightAnswer) {
                     score += 100
                 }
             }
         }
         nextBTN.setOnClickListener {
-            intent.putExtra("SCORE", score)
-            startActivity(intent)
-            finish()
+            if (selectedRadioButton != null){
+                intent.putExtra("SCORE", score)
+                startActivity(intent)
+                finish()
+            } else{
+                Toast.makeText(
+                    applicationContext,
+                    "Выберите ответ",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
-
     }
 }

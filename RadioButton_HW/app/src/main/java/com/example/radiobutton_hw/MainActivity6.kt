@@ -7,17 +7,19 @@ import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity6 : AppCompatActivity() {
-    private lateinit var  radioGroup6: RadioGroup
+    private lateinit var radioGroup6: RadioGroup
     private lateinit var stalinRB: RadioButton
     private lateinit var scoreInAct6TV: TextView
     private lateinit var nextBTN: Button
     private lateinit var rightAnswer: String
+    private var selectedRadioButton: RadioButton? = null
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +33,7 @@ class MainActivity6 : AppCompatActivity() {
         }
         radioGroup6 = findViewById(R.id.radioGroup6)
         stalinRB = findViewById(R.id.stalinRB)
-        scoreInAct6TV =findViewById(R.id.scoreInAct6TV)
+        scoreInAct6TV = findViewById(R.id.scoreInAct6TV)
         nextBTN = findViewById(R.id.nextBTN)
         rightAnswer = getString(R.string.ans1Q5)
 
@@ -42,17 +44,25 @@ class MainActivity6 : AppCompatActivity() {
 
         radioGroup6.setOnCheckedChangeListener { _, checkedID ->
             if (checkedID != -1) {
-                val selectedRadioButton = findViewById<RadioButton>(checkedID)
-                val selectedOption = selectedRadioButton.text.toString()
+                selectedRadioButton = findViewById(checkedID)
+                val selectedOption = selectedRadioButton?.text.toString()
                 if (selectedOption == rightAnswer) {
                     score += 100
                 }
             }
         }
         nextBTN.setOnClickListener {
-            intent.putExtra("SCORE", score)
-            startActivity(intent)
-            finish()
+            if (selectedRadioButton != null) {
+                intent.putExtra("SCORE", score)
+                startActivity(intent)
+                finish()
+            } else {
+                Toast.makeText(
+                    applicationContext,
+                    "Выберите ответ",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
     }
 }

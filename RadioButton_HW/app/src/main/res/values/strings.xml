@@ -4,6 +4,7 @@
     <string name="start">Начать</string>
     <string name="score">Баллы: %1$d</string>
     <string name="next">Продолжить</string>
+    <string name="select_answer">Выберите ответ</string>
 
     <string name="question1">Как звали первого царя всея Руси?</string>
     <string name="ans1Q1">А) Иван Грозный</string>
