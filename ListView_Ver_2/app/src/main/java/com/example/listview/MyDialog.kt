@@ -5,7 +5,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
-class DeleteAlertDialog(
+class MyDialog(
     private val context: Context,
     private val nameList: MutableList<User>,
     private val adapter: ArrayAdapter<User>

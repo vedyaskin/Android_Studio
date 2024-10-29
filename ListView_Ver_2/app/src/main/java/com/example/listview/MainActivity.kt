@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         }
         listView.onItemClickListener =
             AdapterView.OnItemClickListener { _, _, position, _ ->
-                DeleteAlertDialog(this, nameList, adapter).show(position)
+                MyDialog(this, nameList, adapter).show(position)
 
             }
     }
