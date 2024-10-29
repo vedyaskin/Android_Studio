@@ -10,7 +10,6 @@ import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
@@ -51,40 +50,29 @@ class MainActivity : AppCompatActivity() {
             val name = nameEditText.text.toString()
             val age = ageEditText.text.toString()
             if (name.isNotEmpty() && age.isNotEmpty()) {
-                nameList.add(User(name, age))
-                adapter.notifyDataSetChanged()
-                nameEditText.text.clear()
-                ageEditText.text.clear()
+                if (age.toInt() <= 150){
+                    nameList.add(User(name, age))
+                    adapter.notifyDataSetChanged()
+                    nameEditText.text.clear()
+                    ageEditText.text.clear()
+                } else {
+                    Toast.makeText(
+                        this,
+                        "Введите корректный возраст",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
             }
         }
         listView.onItemClickListener =
-            AdapterView.OnItemClickListener { parent, view, position, id ->
-                alertDel(position)
+            AdapterView.OnItemClickListener { _, _, position, _ ->
+                DeleteAlertDialog(this, nameList, adapter).show(position)
 
             }
     }
 
-   private fun alertDel(position: Int) {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Подтверждение")
-            .setMessage("Вы уверены, что хотите удалить ${nameList[position].name}?")
-            .setPositiveButton("Да") { dialog, which ->
-                val deletedUser = nameList[position]
-                nameList.removeAt(position)
-                adapter.notifyDataSetChanged()
-                Toast.makeText(
-                    this,
-                    "${getString(R.string.del)} ${deletedUser.name}",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-            .setNegativeButton("Нет") { dialog, which ->
-                dialog.dismiss()
-            }
 
-        val dialog = builder.create()
-        dialog.show()
-    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
