@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Parcelable</string>
+    <string name="name">Имя:</string>
+    <string name="enter_name">Введите имя</string>
+    <string name="surnameTV">Фамилия:</string>
+    <string name="enter_surname">Введите фамилию</string>
+    <string name="address">Адрес:</string>
+    <string name="enter_address">Введите адрес</string>
+    <string name="phone">Телефон:</string>
+    <string name="enter_phone">Введите номер</string>
+    <string name="title">Книга адресатов</string>
+    <string name="add">Добавить</string>
+    <string name="enteredAddress"><![CDATA[<b><u>Адрес:</u></b><br>]]> %1$s </string>
+    <string name="enteredPhone"><![CDATA[<b><u>тел.:</u></b>]]> %1$s</string>
+    <string name="full_name">%1$s %2$s</string>
+</resources>
