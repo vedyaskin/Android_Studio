@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ListView_Ver_3</string>
+    <string name="title">Каталог пользователей</string>
+    <string name="set_name">Введите имя.</string>
+    <string name="set_Age">Введите возраст</string>
+    <string name="button_text">Сохранить</string>
+    <string name="exit">Выход</string>
+    <string name="del">Удаление</string>
+</resources>
