@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">GridLayoutTableLayout</string>
+    <string name="title">Калькулятор</string>
+    <string name="exit">Выход</string>
+    <string name="confirm_exit">Завершить программу?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="input">input</string>
+    <string name="result">result</string>
+    <string name="division">/</string>
+    <string name="reset">reset</string>
+    <string name="multiply">*</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="equals">=</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="_0">0</string>
+</resources>
