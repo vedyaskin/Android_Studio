@@ -73,6 +73,9 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     i.id != R.id.resultBTN -> {
+                        if (inputET.text.contains("=")) {
+                            inputET.text.clear()
+                        }
                         addOperand()
                         addOperator(i.text.toString())
                     }
